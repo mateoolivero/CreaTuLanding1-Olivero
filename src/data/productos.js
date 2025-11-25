@@ -4,26 +4,29 @@ const productos = [
   { id: "3", titulo: "Gorra Classic", categoria: "gorras", precio: 12000 }
 ];
 
+// 🔹 Obtener todos los productos (ASÍNCRONO)
 export const getProductos = () => {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(productos), 600);
+    setTimeout(() => resolve(productos), 500);
   });
 };
 
-export const getProductosByCategory = (categoriaId) => {
+// 🔹 Obtener productos por categoría (ASÍNCRONO)
+export const getProductosByCategoria = (categoriaId) => {
   return new Promise((resolve) => {
-    setTimeout(
-      () => resolve(productos.filter(p => p.categoria === categoriaId)),
-      600
-    );
+    setTimeout(() => {
+      resolve(productos.filter(p => p.categoria === categoriaId));
+    }, 500);
   });
 };
 
-export const getProductosById = (id) => {
+// 🔹 Obtener producto por id (ASÍNCRONO)
+export const getProductoPorId = (id) => {
   return new Promise((resolve) => {
-    setTimeout(
-      () => resolve(productos.find(p => p.id === id)),
-      600
-    );
+    setTimeout(() => {
+      resolve(productos.find(p => p.id === id));
+    }, 500);
   });
 };
+
+export default productos;
